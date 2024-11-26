@@ -5,7 +5,8 @@
 
 # - Orientada a objetos
 extends Node2D
-var my_field: int = 10
+
+var my_field: String = "text"
 var my_object: String = String()
 
 # - Usa de uma sintaxe baseada em identação:
@@ -18,9 +19,9 @@ func my_func() -> int:
 func gradual_typing():
 	var maybe_integer = 10
 	maybe_integer = "Not integer"
-
+	
 	var certainly_integer: int = 10
-	# certainly_integer = "Not allowed"
+	#certainly_integer = "Not allowed"
 	pass
 
 
@@ -40,5 +41,8 @@ func if_else():
 func for_loop():
 	for i in 10:
 		# Codigo aqui
+		pass
+	
+	for n in [3,4,5]:
 		pass
 	

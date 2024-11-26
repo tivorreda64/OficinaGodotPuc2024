@@ -32,18 +32,22 @@ font = SubResource("FontVariation_34fbe")
 font_size = 48
 outline_color = Color(0, 0, 0, 1)
 
-[node name="2" type="Node3D"]
+[node name="2" type="Node2D"]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_m37qo")
 
-[node name="Camera3D" type="Camera3D" parent="."]
+[node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -576.0
+offset_top = -324.0
+offset_right = 576.0
+offset_bottom = 324.0
 grow_horizontal = 2
 grow_vertical = 2
 

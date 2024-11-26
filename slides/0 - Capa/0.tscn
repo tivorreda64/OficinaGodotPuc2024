@@ -40,20 +40,20 @@ base_font = ExtResource("1_rd71f")
 font = SubResource("FontVariation_1oh1t")
 font_size = 36
 
-[node name="0" type="Node3D"]
+[node name="0" type="Node2D"]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_0rp6o")
 
-[node name="Camera3D" type="Camera3D" parent="."]
+[node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+anchors_preset = 0
+offset_left = -576.0
+offset_top = -324.0
+offset_right = 576.0
+offset_bottom = 324.0
 
 [node name="Background" type="TextureRect" parent="Control"]
 layout_mode = 1
