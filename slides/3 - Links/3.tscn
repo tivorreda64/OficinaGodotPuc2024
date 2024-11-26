@@ -1,0 +1,103 @@
+[gd_scene load_steps=9 format=3 uid="uid://crm8hh6h3rhue"]
+
+[ext_resource type="Script" path="res://slides/3 - Links/3.gd" id="1_adwcf"]
+[ext_resource type="Texture2D" uid="uid://d1gtwb5jw1abp" path="res://assets/background.svg" id="1_owmed"]
+[ext_resource type="FontFile" uid="uid://bi4rgy54kvdpv" path="res://fonts/RobotoMono-VariableFont_wght.ttf" id="2_0brj8"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_1x60i"]
+sky_top_color = Color(0.255659, 0.255659, 0.255659, 1)
+sky_horizon_color = Color(0.25, 0.25, 0.25, 1)
+sky_curve = 0.109806
+sky_cover_modulate = Color(0.419943, 0.292752, 0.319439, 1)
+ground_bottom_color = Color(0.27, 0.27, 0.27, 1)
+ground_horizon_color = Color(0.25, 0.25, 0.25, 1)
+sun_angle_max = 33.65
+
+[sub_resource type="Sky" id="Sky_xw1fv"]
+sky_material = SubResource("ProceduralSkyMaterial_1x60i")
+
+[sub_resource type="Environment" id="Environment_v2ex3"]
+background_mode = 1
+background_color = Color(0.431373, 0.431373, 0.431373, 1)
+background_energy_multiplier = 1.52
+sky = SubResource("Sky_xw1fv")
+
+[sub_resource type="FontVariation" id="FontVariation_ifjxa"]
+base_font = ExtResource("2_0brj8")
+variation_opentype = {
+2003265652: 700
+}
+
+[sub_resource type="LabelSettings" id="LabelSettings_7n223"]
+font = SubResource("FontVariation_ifjxa")
+font_size = 48
+outline_color = Color(0, 0, 0, 1)
+
+[node name="3" type="Node3D"]
+script = ExtResource("1_adwcf")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_v2ex3")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="TextureRect" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_owmed")
+expand_mode = 2
+
+[node name="Title" type="MarginContainer" parent="Control"]
+layout_mode = 1
+offset_right = 461.0
+offset_bottom = 113.0
+theme_override_constants/margin_left = 48
+theme_override_constants/margin_top = 48
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/Title"]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="Control/Title/VBoxContainer"]
+layout_mode = 2
+text = "# Baixando a engine"
+label_settings = SubResource("LabelSettings_7n223")
+horizontal_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="Control"]
+custom_minimum_size = Vector2(0, 300)
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 48
+theme_override_constants/margin_right = 48
+
+[node name="Label" type="RichTextLabel" parent="Control/MarginContainer"]
+custom_minimum_size = Vector2(0, 296.15)
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_fonts/normal_font = ExtResource("2_0brj8")
+theme_override_font_sizes/normal_font_size = 36
+bbcode_enabled = true
+text = "• Godot Engine:  
+[url=https://godotengine.org/download/][indent][p]https://godotengine.org/download/[/p][/indent][/url]
+
+•Materiais: [url=https://github.com/tivorreda64/OficinaGodotPuc2024/releases][indent][p]https://github.com/tivorreda64/OficinaGodotPuc2024/releases[/p][/indent][/url]"
+scroll_active = false
+autowrap_mode = 1

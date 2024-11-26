@@ -1,0 +1,67 @@
+[gd_scene load_steps=6 format=3 uid="uid://bmqx0egl2htr4"]
+
+[ext_resource type="Texture2D" uid="uid://d1gtwb5jw1abp" path="res://assets/background.svg" id="1_acku0"]
+[ext_resource type="FontFile" uid="uid://bi4rgy54kvdpv" path="res://fonts/RobotoMono-VariableFont_wght.ttf" id="2_uw5ql"]
+
+[sub_resource type="Environment" id="Environment_g5j52"]
+background_mode = 1
+background_color = Color(0.450648, 0.450648, 0.450648, 1)
+
+[sub_resource type="FontVariation" id="FontVariation_4nk3j"]
+base_font = ExtResource("2_uw5ql")
+variation_opentype = {
+2003265652: 700
+}
+
+[sub_resource type="LabelSettings" id="LabelSettings_m77jv"]
+font = SubResource("FontVariation_4nk3j")
+font_size = 48
+outline_color = Color(0, 0, 0, 0.458824)
+shadow_size = 0
+
+[node name="12" type="Node2D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_g5j52")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -576.0
+offset_top = -324.0
+offset_right = 576.0
+offset_bottom = 324.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="TextureRect" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_acku0")
+expand_mode = 2
+
+[node name="Title" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -302.5
+offset_top = -32.5
+offset_right = 302.5
+offset_bottom = 32.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+text = "# Flappy Bird!"
+label_settings = SubResource("LabelSettings_m77jv")
+horizontal_alignment = 1
+
+[node name="Camera2D" type="Camera2D" parent="."]

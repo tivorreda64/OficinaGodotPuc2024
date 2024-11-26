@@ -1,0 +1,122 @@
+[gd_scene load_steps=7 format=3 uid="uid://c6j8x65w64x80"]
+
+[ext_resource type="Texture2D" uid="uid://d1gtwb5jw1abp" path="res://assets/background.svg" id="1_f240y"]
+[ext_resource type="Script" path="res://slides/7 - Linguagens/7.gd" id="1_los4n"]
+[ext_resource type="FontFile" uid="uid://bi4rgy54kvdpv" path="res://fonts/RobotoMono-VariableFont_wght.ttf" id="2_m1qro"]
+
+[sub_resource type="Environment" id="Environment_of3rw"]
+background_mode = 1
+background_color = Color(0.450648, 0.450648, 0.450648, 1)
+
+[sub_resource type="FontVariation" id="FontVariation_4scaj"]
+base_font = ExtResource("2_m1qro")
+variation_opentype = {
+2003265652: 700
+}
+
+[sub_resource type="LabelSettings" id="LabelSettings_eagqg"]
+font = SubResource("FontVariation_4scaj")
+font_size = 48
+outline_color = Color(0, 0, 0, 0.458824)
+shadow_size = 0
+
+[node name="7" type="Node2D"]
+script = ExtResource("1_los4n")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_of3rw")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -576.0
+offset_top = -324.0
+offset_right = 576.0
+offset_bottom = 324.0
+pivot_offset = Vector2(576, 324)
+
+[node name="Background" type="TextureRect" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_f240y")
+expand_mode = 2
+
+[node name="Title" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -317.0
+offset_top = 78.0
+offset_right = 317.0
+offset_bottom = 143.0
+grow_horizontal = 2
+size_flags_horizontal = 4
+text = "# Linguagens"
+label_settings = SubResource("LabelSettings_eagqg")
+horizontal_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="Control"]
+custom_minimum_size = Vector2(0, 586.36)
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -183.788
+offset_bottom = 183.788
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 48
+theme_override_constants/margin_right = 48
+
+[node name="Description" type="RichTextLabel" parent="Control/MarginContainer"]
+custom_minimum_size = Vector2(0, 255.43)
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_fonts/normal_font = ExtResource("2_m1qro")
+theme_override_font_sizes/normal_font_size = 36
+bbcode_enabled = true
+text = "• GDScript
+
+• C#
+
+•[wave amp=50.0 freq=5.0 connected=1] [rainbow freq=1.0 sat=0.5 val=0.8]Qualquer uma[/rainbow][/wave] *"
+scroll_active = false
+autowrap_mode = 1
+
+[node name="FootNote" type="RichTextLabel" parent="Control/MarginContainer"]
+layout_mode = 2
+bbcode_enabled = true
+text = "
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[right][font_size={14}]*desde que alguem tenha feito a GDExtension[/font_size][/right]"

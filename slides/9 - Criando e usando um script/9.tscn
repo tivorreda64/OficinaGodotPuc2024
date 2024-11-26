@@ -1,0 +1,116 @@
+[gd_scene load_steps=10 format=3 uid="uid://cj040r4co775k"]
+
+[ext_resource type="Texture2D" uid="uid://d1gtwb5jw1abp" path="res://assets/background.svg" id="1_dpcl4"]
+[ext_resource type="FontFile" uid="uid://bi4rgy54kvdpv" path="res://fonts/RobotoMono-VariableFont_wght.ttf" id="2_6ysck"]
+[ext_resource type="Texture2D" uid="uid://cmg3mkhv7w3xb" path="res://icon.svg" id="3_eed6h"]
+
+[sub_resource type="Environment" id="Environment_rltle"]
+background_mode = 1
+background_color = Color(0.450648, 0.450648, 0.450648, 1)
+
+[sub_resource type="FontVariation" id="FontVariation_bduqu"]
+base_font = ExtResource("2_6ysck")
+variation_opentype = {
+2003265652: 700
+}
+
+[sub_resource type="LabelSettings" id="LabelSettings_mpw6r"]
+font = SubResource("FontVariation_bduqu")
+font_size = 48
+outline_color = Color(0, 0, 0, 0.458824)
+shadow_size = 0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_akv66"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_4ob2h"]
+friction = 0.0
+bounce = 1.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ypfi5"]
+size = Vector2(1155, 129)
+
+[node name="9" type="Node2D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_rltle")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -576.0
+offset_top = -324.0
+offset_right = 576.0
+offset_bottom = 324.0
+pivot_offset = Vector2(576, 324)
+
+[node name="Background" type="TextureRect" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_dpcl4")
+expand_mode = 2
+
+[node name="Title" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -317.0
+offset_top = 78.0
+offset_right = 317.0
+offset_bottom = 143.0
+grow_horizontal = 2
+size_flags_horizontal = 4
+text = "# Criando um script"
+label_settings = SubResource("LabelSettings_mpw6r")
+horizontal_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -457.693
+offset_right = 457.693
+offset_bottom = 423.01
+grow_horizontal = 2
+theme_override_constants/margin_left = 48
+theme_override_constants/margin_right = 48
+
+[node name="Description" type="RichTextLabel" parent="Control/MarginContainer"]
+custom_minimum_size = Vector2(0, 112.17)
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_fonts/normal_font = ExtResource("2_6ysck")
+theme_override_font_sizes/normal_font_size = 36
+bbcode_enabled = true
+text = "[center]Clique com o botão direito no Node \"Godot!\" e depois em \"Attach Script\"[/center]"
+scroll_active = false
+autowrap_mode = 1
+
+[node name="Godot!" type="Node2D" parent="."]
+position = Vector2(0, 86)
+
+[node name="RigidBody2D" type="RigidBody2D" parent="Godot!"]
+mass = 0.04
+
+[node name="Sprite2D" type="Sprite2D" parent="Godot!/RigidBody2D"]
+texture = ExtResource("3_eed6h")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Godot!/RigidBody2D"]
+shape = SubResource("RectangleShape2D_akv66")
+
+[node name="Trampoline" type="Node2D" parent="."]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Trampoline"]
+physics_material_override = SubResource("PhysicsMaterial_4ob2h")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trampoline/StaticBody2D"]
+position = Vector2(2.5, 283.5)
+shape = SubResource("RectangleShape2D_ypfi5")

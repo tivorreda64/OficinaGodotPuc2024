@@ -1,0 +1,66 @@
+[gd_scene load_steps=6 format=3 uid="uid://bge617bl5nqct"]
+
+[ext_resource type="Texture2D" uid="uid://d1gtwb5jw1abp" path="res://assets/background.svg" id="1_p23v5"]
+[ext_resource type="FontFile" uid="uid://bi4rgy54kvdpv" path="res://fonts/RobotoMono-VariableFont_wght.ttf" id="2_6l5pg"]
+
+[sub_resource type="Environment" id="Environment_pg50a"]
+background_mode = 1
+background_color = Color(0.450648, 0.450648, 0.450648, 1)
+
+[sub_resource type="FontVariation" id="FontVariation_4scaj"]
+base_font = ExtResource("2_6l5pg")
+variation_opentype = {
+2003265652: 700
+}
+
+[sub_resource type="LabelSettings" id="LabelSettings_78vrl"]
+font = SubResource("FontVariation_4scaj")
+font_size = 48
+outline_color = Color(0, 0, 0, 0.458824)
+shadow_size = 0
+
+[node name="11" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_pg50a")
+
+[node name="Camera2D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.9972)
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(576, 324)
+
+[node name="Background" type="TextureRect" parent="Control"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_p23v5")
+expand_mode = 2
+
+[node name="Title" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -317.0
+offset_top = 78.0
+offset_right = 317.0
+offset_bottom = 143.0
+grow_horizontal = 2
+size_flags_horizontal = 4
+text = "# Importando assets"
+label_settings = SubResource("LabelSettings_78vrl")
+horizontal_alignment = 1
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.35385, 0.935302, 0, -0.935302, 0.35385, 0, 3.47976, 1.236)

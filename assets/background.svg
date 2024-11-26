@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1920"
+    height="1080" viewBox="0 0 508 285.75">
+    <defs>
+        <linearGradient id="a">
+            <stop style="stop-color:#3923ac;stop-opacity:1" offset="0" />
+            <stop style="stop-color:#741cd1;stop-opacity:1" offset="1" />
+        </linearGradient>
+        <linearGradient y2="240.537" x2="-1790.076" y1="63.925" x1="-1790.076"
+            gradientTransform="matrix(1.43284 0 0 -1.61194 1858.68 307.254)"
+            gradientUnits="userSpaceOnUse" id="c" xlink:href="#a" />
+        <linearGradient xlink:href="#b" id="d" x1="1939.655" y1="2326.83" x2="1939.655"
+            y2="2588.768" gradientUnits="userSpaceOnUse"
+            gradientTransform="matrix(-1 0 0 1 1245.653 -2397.474)" />
+        <linearGradient id="b">
+            <stop style="stop-color:#3A6D8C;stop-opacity:1" offset="0" />
+            <stop style="stop-color:#001F3F;stop-opacity:1" offset="1" />
+        </linearGradient>
+    </defs>
+    <path d="M-1000.39 203.994h508v-285.75h-508z"
+        style="opacity:1;fill:url(#c);fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:10.5833;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+        transform="translate(1000.39 81.756)" />
+    <path d="m-996.505-68.689 494.666-10.202 5.564 269.818-494.665 10.202z"
+        style="opacity:.652;fill:#000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:10.5833;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+        transform="translate(1000.39 81.756)" />
+    <path
+        style="opacity:1;fill:#fff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:10.5833;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+        d="M-993.775-73.819h494.77v269.875h-494.77z" transform="translate(1000.39 81.756)" />
+    <path
+        style="opacity:1;fill:url(#d);fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:10.5833;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+        d="M-502.973 192.087h-486.833V-69.85h486.833z" transform="translate(1000.39 81.756)" />
+</svg>

@@ -1,0 +1,91 @@
+[gd_scene load_steps=10 format=3 uid="uid://c6mr1i8w1cvkw"]
+
+[ext_resource type="Texture2D" uid="uid://d1gtwb5jw1abp" path="res://assets/background.svg" id="1_0xwdw"]
+[ext_resource type="FontFile" uid="uid://bi4rgy54kvdpv" path="res://fonts/RobotoMono-VariableFont_wght.ttf" id="2_dmi2d"]
+[ext_resource type="Texture2D" uid="uid://cmg3mkhv7w3xb" path="res://icon.svg" id="3_c4wkr"]
+
+[sub_resource type="Environment" id="Environment_on3bl"]
+background_mode = 1
+background_color = Color(0.450648, 0.450648, 0.450648, 1)
+
+[sub_resource type="FontVariation" id="FontVariation_4lv25"]
+base_font = ExtResource("2_dmi2d")
+variation_opentype = {
+2003265652: 700
+}
+
+[sub_resource type="LabelSettings" id="LabelSettings_o0vny"]
+font = SubResource("FontVariation_4lv25")
+font_size = 48
+outline_color = Color(0, 0, 0, 0.458824)
+shadow_size = 0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b7nyq"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_dvaus"]
+friction = 0.0
+bounce = 1.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5yc8a"]
+size = Vector2(1155, 129)
+
+[node name="6" type="Node2D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_on3bl")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -576.0
+offset_top = -324.0
+offset_right = 576.0
+offset_bottom = 324.0
+pivot_offset = Vector2(576, 324)
+
+[node name="Background" type="TextureRect" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_0xwdw")
+expand_mode = 2
+
+[node name="Title" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -317.0
+offset_top = 78.0
+offset_right = 317.0
+offset_bottom = 143.0
+grow_horizontal = 2
+size_flags_horizontal = 4
+text = "# Scenes vs Prefabs"
+label_settings = SubResource("LabelSettings_o0vny")
+horizontal_alignment = 1
+
+[node name="Godot!" type="Node2D" parent="."]
+
+[node name="RigidBody2D" type="RigidBody2D" parent="Godot!"]
+mass = 0.04
+
+[node name="Sprite2D" type="Sprite2D" parent="Godot!/RigidBody2D"]
+texture = ExtResource("3_c4wkr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Godot!/RigidBody2D"]
+shape = SubResource("RectangleShape2D_b7nyq")
+
+[node name="Trampoline" type="Node2D" parent="."]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Trampoline"]
+physics_material_override = SubResource("PhysicsMaterial_dvaus")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trampoline/StaticBody2D"]
+position = Vector2(2.5, 283.5)
+shape = SubResource("RectangleShape2D_5yc8a")

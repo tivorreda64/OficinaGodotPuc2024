@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://cx2ai6q6iwty0"]
+
+[ext_resource type="Texture2D" uid="uid://cmg3mkhv7w3xb" path="res://icon.svg" id="1_0bbyn"]
+[ext_resource type="Script" path="res://slides/10 - Instanciando cenas/hello_world.gd" id="1_faqjr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_emqag"]
+
+[node name="Godot!" type="Node2D"]
+position = Vector2(0, 86)
+script = ExtResource("1_faqjr")
+
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
+mass = 0.04
+
+[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D"]
+texture = ExtResource("1_0bbyn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
+shape = SubResource("RectangleShape2D_emqag")

@@ -1,0 +1,132 @@
+[gd_scene load_steps=9 format=3 uid="uid://dqqt2wxhf3fk"]
+
+[ext_resource type="Texture2D" uid="uid://xk13nba57khf" path="res://slides/1 - Eu/assets/eu.jpg" id="1_4ueea"]
+[ext_resource type="Texture2D" uid="uid://d1gtwb5jw1abp" path="res://assets/background.svg" id="1_hrjbs"]
+[ext_resource type="FontFile" uid="uid://bi4rgy54kvdpv" path="res://fonts/RobotoMono-VariableFont_wght.ttf" id="2_0x665"]
+
+[sub_resource type="Environment" id="Environment_r78t3"]
+background_mode = 1
+background_color = Color(0.450648, 0.450648, 0.450648, 1)
+
+[sub_resource type="FontVariation" id="FontVariation_2mygq"]
+base_font = ExtResource("2_0x665")
+variation_opentype = {
+2003265652: 700
+}
+
+[sub_resource type="LabelSettings" id="LabelSettings_tp0pe"]
+font = SubResource("FontVariation_2mygq")
+font_size = 48
+outline_color = Color(0, 0, 0, 0.458824)
+shadow_size = 0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0ol0l"]
+bg_color = Color(0, 0, 0, 0.537255)
+skew = Vector2(-0.02, 0.02)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_weuv8"]
+bg_color = Color(1, 1, 1, 1)
+
+[node name="1" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_r78t3")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="TextureRect" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_hrjbs")
+expand_mode = 2
+
+[node name="Title" type="MarginContainer" parent="Control"]
+layout_mode = 1
+offset_right = 461.0
+offset_bottom = 113.0
+theme_override_constants/margin_left = 48
+theme_override_constants/margin_top = 48
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/Title"]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="Control/Title/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+text = "# Apresentação"
+label_settings = SubResource("LabelSettings_tp0pe")
+horizontal_alignment = 1
+
+[node name="Content" type="MarginContainer" parent="Control/Title/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 64
+theme_override_constants/margin_top = 32
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/Title/VBoxContainer/Content"]
+layout_mode = 2
+alignment = 1
+
+[node name="Frame" type="Control" parent="Control/Title/VBoxContainer/Content/HBoxContainer"]
+custom_minimum_size = Vector2(200, 400)
+layout_mode = 2
+
+[node name="Black" type="Panel" parent="Control/Title/VBoxContainer/Content/HBoxContainer/Frame"]
+layout_mode = 1
+offset_right = 202.0
+offset_bottom = 405.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_0ol0l")
+
+[node name="White" type="Panel" parent="Control/Title/VBoxContainer/Content/HBoxContainer/Frame"]
+layout_mode = 1
+offset_right = 200.0
+offset_bottom = 400.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_weuv8")
+
+[node name="MarginContainer" type="MarginContainer" parent="Control/Title/VBoxContainer/Content/HBoxContainer/Frame/White"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="Eu" type="TextureRect" parent="Control/Title/VBoxContainer/Content/HBoxContainer/Frame/White/MarginContainer"]
+layout_mode = 2
+texture = ExtResource("1_4ueea")
+expand_mode = 5
+stretch_mode = 6
+
+[node name="Description" type="MarginContainer" parent="Control/Title/VBoxContainer/Content/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_right = 72
+
+[node name="Description" type="RichTextLabel" parent="Control/Title/VBoxContainer/Content/HBoxContainer/Description"]
+custom_minimum_size = Vector2(744.41, 212.04)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+theme_override_fonts/normal_font = ExtResource("2_0x665")
+theme_override_font_sizes/normal_font_size = 36
+theme_override_font_sizes/bold_font_size = 36
+bbcode_enabled = true
+text = "# Jogos Digitais ------ [b]2016 - 2019[/b]
+# Gaz Games ----------- [b]2019 - 2019[/b]
+# Studio Sol (Jogos) -- [b]2019 - 2021[/b]
+# Studio Sol (Mobile) - [b]2021 - Now[/b]"

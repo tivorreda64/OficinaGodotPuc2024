@@ -1,0 +1,98 @@
+[gd_scene load_steps=8 format=3 uid="uid://b14qndmqy4bwj"]
+
+[ext_resource type="Texture2D" uid="uid://d1gtwb5jw1abp" path="res://assets/background.svg" id="1_w83ym"]
+[ext_resource type="FontFile" uid="uid://bi4rgy54kvdpv" path="res://fonts/RobotoMono-VariableFont_wght.ttf" id="2_fwb8v"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_e50jy"]
+sky_top_color = Color(0.255659, 0.255659, 0.255659, 1)
+sky_horizon_color = Color(0.25, 0.25, 0.25, 1)
+sky_curve = 0.109806
+sky_cover_modulate = Color(0.419943, 0.292752, 0.319439, 1)
+ground_bottom_color = Color(0.27, 0.27, 0.27, 1)
+ground_horizon_color = Color(0.25, 0.25, 0.25, 1)
+sun_angle_max = 33.65
+
+[sub_resource type="Sky" id="Sky_guy6n"]
+sky_material = SubResource("ProceduralSkyMaterial_e50jy")
+
+[sub_resource type="Environment" id="Environment_m37qo"]
+background_mode = 1
+background_color = Color(0.43, 0.43, 0.43, 1)
+background_energy_multiplier = 1.52
+sky = SubResource("Sky_guy6n")
+
+[sub_resource type="FontVariation" id="FontVariation_34fbe"]
+base_font = ExtResource("2_fwb8v")
+variation_opentype = {
+2003265652: 700
+}
+
+[sub_resource type="LabelSettings" id="LabelSettings_2g2gd"]
+font = SubResource("FontVariation_34fbe")
+font_size = 48
+outline_color = Color(0, 0, 0, 1)
+
+[node name="2" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_m37qo")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="TextureRect" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_w83ym")
+expand_mode = 2
+
+[node name="Title" type="MarginContainer" parent="Control"]
+layout_mode = 1
+offset_right = 461.0
+offset_bottom = 113.0
+theme_override_constants/margin_left = 48
+theme_override_constants/margin_top = 48
+
+[node name="Title" type="Label" parent="Control/Title"]
+layout_mode = 2
+text = "# Agenda"
+label_settings = SubResource("LabelSettings_2g2gd")
+
+[node name="MarginContainer" type="MarginContainer" parent="Control"]
+custom_minimum_size = Vector2(0, 300)
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 64
+theme_override_constants/margin_right = 48
+
+[node name="Label" type="RichTextLabel" parent="Control/MarginContainer"]
+custom_minimum_size = Vector2(0, 260.59)
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_fonts/normal_font = ExtResource("2_fwb8v")
+theme_override_font_sizes/normal_font_size = 36
+bbcode_enabled = true
+text = "• Baixar a engine e materiais
+
+• Conceitos e familiarização com a engine
+
+• Clone de Flappy Bird!"
+scroll_active = false
+autowrap_mode = 1
